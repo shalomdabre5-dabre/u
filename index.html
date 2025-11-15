@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shalom's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; transition: background 0.5s, color 0.5s; }
+    body.light-mode { background: #ffffff; color: #222; }
+    body.dark-mode { background: #121212; color: #f5f5f5; }
+    header { position: fixed; top: 0; width: 100%; background: rgba(0,0,0,0.5); color: #fff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+    header h1 { font-size: 1.5em; }
+    nav a { color: #fff; margin: 0 10px; text-decoration: none; font-weight: 500; }
+    nav a:hover { color: #00acee; }
+    .theme-toggle { cursor: pointer; font-size: 1.3em; transition: transform 0.3s; }
+    .theme-toggle:hover { transform: rotate(20deg); }
+
+    section { padding: 120px 20px; text-align: center; }
+    #home { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; }
+    #particles-js { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+    .hero-content { position: relative; z-index: 1; text-align: center; }
+    .hero-content h2 { font-size: 2.5em; margin-bottom: 10px; }
+    .hero-content p { font-size: 1.2em; }
+    .profile-pic { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; opacity: 0; }
+
+    #about { max-width: 900px; margin: 0 auto; text-align: left; line-height: 1.6; }
+    #about h2 { text-align: center; font-size: 2.2em; margin-bottom: 20px; color: #00acee; }
+
+    #gallery { max-width: 1000px; margin: 0 auto; }
+    #gallery h2 { text-align: center; font-size: 2.2em; margin-bottom: 20px; color: #00acee; }
+    .gallery-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .gallery-container img { width: 100%; border-radius: 15px; transition: transform 0.4s, box-shadow 0.4s; }
+    .gallery-container img:hover { transform: scale(1.05); box-shadow: 0 0 20px #00acee; }
+
+    .contact-icons a { color: inherit; margin: 10px; font-size: 1.5em; transition: transform 0.3s, color 0.3s; display: inline-block; }
+    .contact-icons a:hover { transform: scale(1.3); color: #00acee; text-shadow: 0 0 15px #00acee; }
+
+    .contact-form { margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+    .contact-form input, .contact-form textarea { width: 80%; max-width: 500px; padding: 10px; border: 2px solid #00acee; border-radius: 8px; font-size: 1em; background: transparent; color: inherit; }
+    .contact-form textarea { height: 120px; resize: none; }
+    .contact-form button { background: #00acee; color: white; padding: 10px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; transition: background 0.3s; }
+    .contact-form button:hover { background: #0e708e; }
+
+    footer { text-align: center; padding: 20px; background: rgba(0,0,0,0.6); color: #fff; }
+  
+  </style>
+</head>
+<body class="light-mode">
+  <header>
+    <h1>Shalom's Portfolio</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#work">Work</a>
+      <a href="#My Certificates">My Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <i id="themeToggle" class="fas fa-moon theme-toggle"></i>
+  </header>
+
+  <section id="home">
+    <div id="particles-js"></div>
+    <div class="hero-content">
+      <img src="profile.jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+      <h2>Hi, I’m Shalom — a creative developer</h2>
+      <p>Welcome to my digital portfolio showcasing my passion for design and innovation.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    
+
+    <h2>About Me</h2>
+    <p><strong>Shalom Dabre</strong><br><br>
+      Hello! I’m Shalom, a passionate designer & developer creating immersive digital experiences. I am currently pursuing a Bachelor of Technology in Computer Engineering at Fr. Conceicao Rodrigues College of Engineering, with a strong passion for exploring and mastering the ever-evolving world of technology. My academic journey began at Holy cross English School, where I completed my SSC with an impressive score of 88.60%, followed by my HSC at Lokmanya Junior College, achieving a score of 75.00% in the PCM stream.<br><br>
+      I continue to build a solid foundation in computer engineering, driven by a deep interest in software development, systems design, and problem-solving. My technical skills span across programming languages, data structures, and algorithms, and I am constantly exploring new technologies to enhance my expertise. In addition to academics, I am eager to apply my skills in real-world projects and internships, aiming to contribute innovative solutions to complex challenges. I aspire to become a skilled engineer who blends creativity with technical excellence to drive the future of technology.
+    </p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-container">
+      <img src="g1.jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+      <img src="g2d.jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+      <img src="g3.jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+      <img src="g4.jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+      <img src="g5.jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+      <img src="g6.jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+      
+    </div>
+  </section>
+
+  <section id="work">
+    <div style="position:absolute; top:100px; right:20px; width:180px; display:flex; flex-direction:column; gap:10px; z-index:5;">
+      <imsrc=".jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+      <imsrc=".jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+      <im src=".jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+    </div>
+    <h2>My Work</h2>
+    <div class="gallery-container">
+      <div>
+        <img src="s1.png" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+        <p><strong>Task Manager App</strong><br>A full-featured to‑do web app with reminders, categories, and animations.</p>
+      </div>
+      <div>
+        <img src="s2.png" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+        <p><strong>Portfolio Website</strong><br>A modern animated portfolio designed using HTML, CSS, and JavaScript.</p>
+      </div>
+      <div>
+        <img src="s3.png" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+        <p><strong>Analytics Dashboard</strong><br>Interactive dashboard with charts and live stats built using JS APIs.</p>
+      </div>
+      <div>
+       <img src="s4.png" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+        <p><strong>E‑Commerce UI</strong><br>A clean and responsive shopping interface with product filters.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="certificates">
+    <h2>My Certificates</h2>
+    <p style="margin-bottom:20px; color:#00acee; font-weight:600;">.</p>
+
+    <div class="gallery-container">
+      <img src="c1.jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+      <img src="c2.jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+      <img src="c3.jpeg" alt="Shalom's Photo" class="profile-pic" id="profilePic">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-icons">
+      <a href="tel:8180867781"><i class="fas fa-phone"></i></a>
+      <a href="mailto:shalomdabre5@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.instagram.com/shalomdabre?igsh=MWVwd2kwNGhpMjdoZg==&utm_source=ig_contact_invite" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>Phone: <a href="tel:8180867781">8180867781</a></p>
+    <p>Email: <a href="mailto:shalomdabre5@gmail.com">shalomdabre5@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/shalomdabre?igsh=MWVwd2kwNGhpMjdoZg==&utm_source=ig_contact_invite" target="_blank">@shalomdabre</a></p>
+
+    <div class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Shalom's Portfolio | Designed with ❤️</p>
+  </footer>
+
+  <script>
+    // Particle Background
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80 },
+        color: { value: '#00acee' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: { enable: true, color: '#00acee' },
+        move: { enable: true, speed: 3 }
+      },
+      interactivity: { events: { onhover: { enable: true, mode: 'repulse' } } }
+    });
+
+    // GSAP Scroll Animations
+    gsap.utils.toArray('section').forEach(section => {
+      gsap.from(section, { opacity: 0, y: 50, duration: 1, scrollTrigger: { trigger: section, start: 'top 80%' } });
+    });
+
+    // Fade-in animation for profile image
+    window.addEventListener('load', () => {
+      gsap.to('#profilePic', { opacity: 1, duration: 2, delay: 0.5, ease: 'power2.out' });
+    });
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      document.body.classList.toggle('light-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        themeToggle.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        themeToggle.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+  </script>
+  <!-- Image Popup Modal -->
+<div id="imgModal" class="img-modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="imgModalContent">
+</div>
+<script>
+  // Large image popup logic for all images
+  document.querySelectorAll('.gallery-container img, .gallery-container .profile-pic, section#work img, section#certificates img')
+    .forEach(img => {
+      img.addEventListener('click', function() {
+        // Set the modal image source to the clicked image's source
+        document.getElementById('imgModalContent').src = this.src;
+        // Show the modal
+        document.getElementById('imgModal').style.display = 'block';
+      });
+    });
+
+  // Close icon logic
+  document.querySelector('#imgModal .close').onclick = function() {
+    document.getElementById('imgModal').style.display = 'none';
+  };
+
+  // (Optional) Clicking outside the large image closes the modal
+  window.onclick = function(event) {
+    var modal = document.getElementById('imgModal');
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  };
+</script>
+
+</body>
+</html>
